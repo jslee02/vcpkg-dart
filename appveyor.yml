@@ -38,9 +38,13 @@ install:
   - cd vcpkg
   - powershell -exec bypass scripts\bootstrap.ps1
   #- vcpkg install eigen3 assimp tinyxml2 opengl
-  - vcpkg install eigen3
+  - vcpkg install libccd
   - vcpkg integrate install
   - cd ..
+  
+  - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\
+  - cd C:\projects\vcpkg\ports\
+  - dir
   
   # install DART
   - cmd: if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
