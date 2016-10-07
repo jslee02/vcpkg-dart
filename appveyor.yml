@@ -52,6 +52,9 @@ install:
   #- vcpkg install fcl
   #- vcpkg integrate install
   
+  - cd C:\projects\vcpkg\scripts\buildsystems
+  - dir
+  
   # install DART
   - if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
   - if "%platform%"=="x64"   set CMAKE_GENERATOR_NAME=Visual Studio 14 2015 Win64
