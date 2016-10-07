@@ -39,8 +39,6 @@ install:
   
   # copy custom ports into vcpkg ports directory
   - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\ /S
-  - cd C:\projects\vcpkg\ports\
-  - dir
   
   # build vcpkg
   - powershell -exec bypass scripts\bootstrap.ps1
