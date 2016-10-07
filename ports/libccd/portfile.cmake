@@ -11,7 +11,7 @@ include(vcpkg_common_functions)
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/flexible-collision-library/fcl/archive/0.5.0.zip"
     FILENAME "fcl-0.5.0.zip"
-    SHA512 d8488702989629a80297b9aea1f91fd5f3d0736f91cc5d7991a41ade99a445e9897c752fbedb2829350fabb5439d4ea31d34bbedb771b3e66aef23cd40b02122
+    SHA512 a1611e414c56d70318b8d0b09f7949c3c49a135ea3ffc83369724e94e1cb5ec737e8b18449765f4c8a33084cef87cd2ea2e116b3a17c158c2437dc8e847d5bfb
 )
 vcpkg_extract_source_archive(${ARCHIVE})
 
