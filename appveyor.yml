@@ -45,13 +45,14 @@ install:
   
   # install pacakges
   #- vcpkg install eigen3 assimp tinyxml2 opengl
-  - vcpkg install eigen3 libccd fcl
+  - vcpkg install eigen3 libccd
   - vcpkg integrate install
-  - cd ..
+  - vcpkg install fcl
+  - vcpkg integrate install
   
   # install DART
-  - cmd: if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
-  - cmd: if "%platform%"=="x64"   set CMAKE_GENERATOR_NAME=Visual Studio 14 2015 Win64
+  - if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
+  - if "%platform%"=="x64"   set CMAKE_GENERATOR_NAME=Visual Studio 14 2015 Win64
   - cd C:\projects
   - git clone https://github.com/dartsim/dart
   - cd dart
