@@ -38,7 +38,7 @@ install:
   - cd vcpkg
   
   # copy custom ports into vcpkg ports directory
-  - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\
+  - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\ /S
   - cd C:\projects\vcpkg\ports\
   - dir
   
