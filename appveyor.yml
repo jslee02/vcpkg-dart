@@ -32,6 +32,9 @@ clone_folder: C:\projects\vcpkg-dart
 install:
   #- set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
   
+  - if "%platform%"=="Win32" set VCPKG_ARCH=x86-windows
+  - if "%platform%"=="x64"   set VCPKG_ARCH=x64-windows
+  
   # clone vcpkg
   - cd C:\projects
   - git clone https://github.com/Microsoft/vcpkg
@@ -45,7 +48,7 @@ install:
   
   # install pacakges
   #- vcpkg install eigen3 assimp tinyxml2 opengl
-  - vcpkg install eigen3:x64-windows libccd:x64-windows
+  - vcpkg install eigen3:%VCPKG_ARCH% libccd:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
   #- dir
@@ -69,5 +72,5 @@ build: off
 test: off
 
 on_failure:
-  - type C:\projects\vcpkg\buildtrees\fcl\config-x64-windows-rel-out.log
-  - type C:\projects\vcpkg\buildtrees\fcl\config-x64-windows-rel-err.log
+  - type C:\projects\vcpkg\buildtrees\fcl\config-%VCPKG_ARCH%-rel-out.log
+  - type C:\projects\vcpkg\buildtrees\fcl\config-%VCPKG_ARCH%-rel-err.log
