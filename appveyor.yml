@@ -47,8 +47,10 @@ install:
   #- vcpkg install eigen3 assimp tinyxml2 opengl
   - vcpkg install eigen3 libccd
   - vcpkg integrate install
-  - vcpkg install fcl
-  - vcpkg integrate install
+  - cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/cmake
+  - dir
+  #- vcpkg install fcl
+  #- vcpkg integrate install
   
   # install DART
   - if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
