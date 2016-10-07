@@ -24,11 +24,6 @@ vcpkg_configure_cmake(
 
 vcpkg_install_cmake()
 
-# TODO(JS): Update below lines for fcl
-#file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/share)
-#file(RENAME ${CURRENT_PACKAGES_DIR}/lib/cmake/assimp-3.3 ${CURRENT_PACKAGES_DIR}/share/assimp)
-#file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/lib/cmake)
-#file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/lib/cmake)
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 # Handle copyright
