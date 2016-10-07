@@ -47,8 +47,8 @@ install:
   #- vcpkg install eigen3 assimp tinyxml2 opengl
   - vcpkg install eigen3:x64-windows libccd:x64-windows
   - vcpkg integrate install
-  - cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
-  - dir
+  #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
+  #- dir
   #- vcpkg install fcl
   #- vcpkg integrate install
   
@@ -69,5 +69,5 @@ build: off
 test: off
 
 on_failure:
-  - type C:\projects\vcpkg\buildtrees\fcl\config-x86-windows-rel-out.log
-  - type C:\projects\vcpkg\buildtrees\fcl\config-x86-windows-rel-err.log
+  - type C:\projects\vcpkg\buildtrees\fcl\config-x64-windows-rel-out.log
+  - type C:\projects\vcpkg\buildtrees\fcl\config-x64-windows-rel-err.log
