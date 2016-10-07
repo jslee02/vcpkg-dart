@@ -27,6 +27,7 @@ vcpkg_install_cmake()
 #file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/share)
 #file(RENAME ${CURRENT_PACKAGES_DIR}/lib/cmake/ccd ${CURRENT_PACKAGES_DIR}/share/ccd)
 
+# Avoid a copy of include file in debug
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 # Handle copyright
