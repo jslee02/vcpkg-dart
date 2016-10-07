@@ -18,7 +18,7 @@ vcpkg_extract_source_archive(${ARCHIVE})
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    OPTIONS -DCMAKE_TOOLCHAIN_FILE=C:\projects\vcpkg\scripts\buildsystems\vcpkg.cmake
+    OPTIONS -DCMAKE_TOOLCHAIN_FILE=C:\\projects\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake
     # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
