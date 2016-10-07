@@ -45,7 +45,7 @@ install:
   
   # install pacakges
   #- vcpkg install eigen3 assimp tinyxml2 opengl
-  #- vcpkg install eigen3
+  - vcpkg install eigen3
   - vcpkg install libccd
   - vcpkg integrate install
   - cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
