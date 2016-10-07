@@ -48,7 +48,7 @@ install:
   #- vcpkg install eigen3
   - vcpkg install libccd
   - vcpkg integrate install
-  - cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/cmake
+  - cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
   - dir
   #- vcpkg install fcl
   #- vcpkg integrate install
