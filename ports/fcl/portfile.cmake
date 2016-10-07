@@ -1,4 +1,3 @@
-
 # Common Ambient Variables:
 #   VCPKG_ROOT_DIR = <C:\path\to\current\vcpkg>
 #   TARGET_TRIPLET is the current triplet (x86-windows, etc)
