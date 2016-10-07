@@ -46,6 +46,7 @@ install:
   # install pacakges
   #- vcpkg install eigen3 assimp tinyxml2 opengl
   - vcpkg install libccd
+  - vcpkg install fcl
   - vcpkg integrate install
   - cd ..
   
