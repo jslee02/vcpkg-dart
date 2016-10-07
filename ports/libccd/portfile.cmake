@@ -9,14 +9,14 @@
 include(${CMAKE_TRIPLET_FILE})
 include(vcpkg_common_functions)
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/flexible-collision-library/fcl/archive/0.5.0.zip"
-    FILENAME "fcl-0.5.0.zip"
-    SHA512 a1611e414c56d70318b8d0b09f7949c3c49a135ea3ffc83369724e94e1cb5ec737e8b18449765f4c8a33084cef87cd2ea2e116b3a17c158c2437dc8e847d5bfb
+    URLS "https://github.com/danfis/libccd/archive/v2.0.zip"
+    FILENAME "libccd-2.0.zip"
+    SHA512 3bed2c971d20bea8c656f44383196c9e2dd0fc0cf46aaf0a6bb800b62103d9368a192ec0f92b274fc45733c09bcb3796eed48ce5ba7817e66a566bd0987ad21f
 )
 vcpkg_extract_source_archive(${ARCHIVE})
 
 vcpkg_configure_cmake(
-    SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/fcl-0.5.0
+    SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libccd-2.0
     # OPTIONS -DFCL_SOMETHING
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
