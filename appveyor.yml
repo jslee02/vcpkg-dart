@@ -32,19 +32,24 @@ clone_folder: C:\projects\vcpkg-dart
 install:
   #- set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
   
-  # install vcpkg and DART dependency libraries
+  # clone vcpkg
   - cd C:\projects
   - git clone https://github.com/Microsoft/vcpkg
   - cd vcpkg
+  
+  # copy custom ports into vcpkg ports directory
+  - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\
+  - cd C:\projects\vcpkg\ports\
+  - dir
+  
+  # build vcpkg
   - powershell -exec bypass scripts\bootstrap.ps1
+  
+  # install pacakges
   #- vcpkg install eigen3 assimp tinyxml2 opengl
   - vcpkg install libccd
   - vcpkg integrate install
   - cd ..
-  
-  - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\
-  - cd C:\projects\vcpkg\ports\
-  - dir
   
   # install DART
   - cmd: if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
