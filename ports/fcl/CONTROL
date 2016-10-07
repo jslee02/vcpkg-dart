@@ -1,3 +1,4 @@
 Source: fcl
 Version: 0.5.0
 Description: Flexible Collision Library
+Build-Depends: eigen3, libccd
