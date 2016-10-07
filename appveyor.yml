@@ -48,7 +48,7 @@ install:
   
   # install pacakges
   #- vcpkg install eigen3 assimp tinyxml2 opengl
-  - vcpkg install eigen3:%VCPKG_ARCH% libccd:%VCPKG_ARCH%
+  - vcpkg install eigen3:%VCPKG_ARCH% libccd:%VCPKG_ARCH% fcl:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
   #- dir
