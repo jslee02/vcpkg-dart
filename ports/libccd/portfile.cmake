@@ -32,5 +32,5 @@ vcpkg_install_cmake()
 #file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
 
 # Handle copyright
-#file(COPY ${CURRENT_BUILDTREES_DIR}/src/assimp-3.3.1/LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/assimp)
-#file(RENAME ${CURRENT_PACKAGES_DIR}/share/assimp/LICENSE ${CURRENT_PACKAGES_DIR}/share/assimp/copyright)
+file(COPY ${CURRENT_BUILDTREES_DIR}/src/libccd-2.0/BSD-LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libccd)
+file(RENAME ${CURRENT_PACKAGES_DIR}/share/libccd-2.0/BSD-LICENSE ${CURRENT_PACKAGES_DIR}/share/libccd/copyright)
