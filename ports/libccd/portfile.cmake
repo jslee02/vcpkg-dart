@@ -33,4 +33,4 @@ vcpkg_install_cmake()
 
 # Handle copyright
 file(COPY ${CURRENT_BUILDTREES_DIR}/src/libccd-2.0/BSD-LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libccd)
-file(RENAME ${CURRENT_PACKAGES_DIR}/share/libccd-2.0/BSD-LICENSE ${CURRENT_PACKAGES_DIR}/share/libccd/copyright)
+file(RENAME ${CURRENT_PACKAGES_DIR}/share/libccd/BSD-LICENSE ${CURRENT_PACKAGES_DIR}/share/libccd/copyright)
