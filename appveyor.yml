@@ -47,8 +47,11 @@ install:
   - powershell -exec bypass scripts\bootstrap.ps1
   
   # install pacakges
-  #- vcpkg install eigen3 assimp tinyxml2 opengl
-  - vcpkg install eigen3:%VCPKG_ARCH% libccd:%VCPKG_ARCH% fcl:%VCPKG_ARCH%
+  # install required dependencies: eigen3, assimp (boost is already installed by appveyor)
+  - vcpkg install eigen3:%VCPKG_ARCH% assimp:%VCPKG_ARCH%
+  # install optional dependencies: bullet3, tinyxml2, freeglut, opengl
+  - vcpkg bullet3:%VCPKG_ARCH% tinyxml2:%VCPKG_ARCH% freeglut:%VCPKG_ARCH% opengl:%VCPKG_ARCH%
+  #- vcpkg install libccd:%VCPKG_ARCH% fcl:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
   #- dir
