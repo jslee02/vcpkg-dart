@@ -55,6 +55,8 @@ install:
   # - testing dependencies: libccd, fcl
   - vcpkg install libccd:%VCPKG_ARCH%
   - vcpkg integrate install
+  - dir
+  - dir C:\projects\vcpkg\
   - vcpkg install fcl:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
