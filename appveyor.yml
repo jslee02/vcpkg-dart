@@ -48,11 +48,14 @@ install:
   
   # install pacakges
   # - required dependencies: eigen3, assimp (boost is already installed by appveyor)
-  - vcpkg install eigen3:%VCPKG_ARCH% assimp:%VCPKG_ARCH%
+  - vcpkg install eigen3:%VCPKG_ARCH% #assimp:%VCPKG_ARCH%
+  - vcpkg integrate install
   # - optional dependencies: bullet3, tinyxml2, freeglut, opengl
-  - vcpkg install bullet3:%VCPKG_ARCH% tinyxml2:%VCPKG_ARCH% freeglut:%VCPKG_ARCH% opengl:%VCPKG_ARCH%
+  #- vcpkg install bullet3:%VCPKG_ARCH% tinyxml2:%VCPKG_ARCH% freeglut:%VCPKG_ARCH% opengl:%VCPKG_ARCH%
   # - testing dependencies: libccd, fcl
-  - vcpkg install libccd:%VCPKG_ARCH% fcl:%VCPKG_ARCH%
+  - vcpkg install libccd:%VCPKG_ARCH%
+  - vcpkg integrate install
+  - vcpkg install fcl:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
   #- dir
@@ -60,14 +63,14 @@ install:
   #- vcpkg integrate install
   
   # install DART
-  - if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
-  - if "%platform%"=="x64"   set CMAKE_GENERATOR_NAME=Visual Studio 14 2015 Win64
-  - cd C:\projects
-  - git clone https://github.com/dartsim/dart
-  - cd dart
-  - md build
-  - cd build
-  - cmake .. -G "%CMAKE_GENERATOR_NAME%" "-DCMAKE_TOOLCHAIN_FILE=C:\projects\vcpkg\scripts\buildsystems\vcpkg.cmake" "-DCMAKE_BUILD_TYPE=%configuration%" -DBOOST_ROOT="%BOOST_ROOT%" -DBOOST_LIBRARYDIR="%BOOST_LIBRARYDIR%" -DBoost_USE_STATIC_LIBS="ON"
+  #- if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
+  #- if "%platform%"=="x64"   set CMAKE_GENERATOR_NAME=Visual Studio 14 2015 Win64
+  #- cd C:\projects
+  #- git clone https://github.com/dartsim/dart
+  #- cd dart
+  #- md build
+  #- cd build
+  #- cmake .. -G "%CMAKE_GENERATOR_NAME%" "-DCMAKE_TOOLCHAIN_FILE=C:\projects\vcpkg\scripts\buildsystems\vcpkg.cmake" "-DCMAKE_BUILD_TYPE=%configuration%" -DBOOST_ROOT="%BOOST_ROOT%" -DBOOST_LIBRARYDIR="%BOOST_LIBRARYDIR%" -DBoost_USE_STATIC_LIBS="ON"
 
 # scripts to run before build
 #before_build:
