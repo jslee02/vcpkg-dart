@@ -24,7 +24,8 @@ vcpkg_configure_cmake(
     # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
-    OPTIONS -DEIGEN3_ROOT_DIR="${CURRENT_PACKAGES_DIR}/../../installed/${TARGET_TRIPLET}/include"
+    OPTIONS -DEIGEN3_ROOT_DIR="${CURRENT_PACKAGES_DIR}/../../installed/${TARGET_TRIPLET}"
+    OPTIONS -DEIGEN3_INCLUDE_DIR="${CURRENT_PACKAGES_DIR}/../../installed/${TARGET_TRIPLET}/include/eigen3"
 )
 
 vcpkg_install_cmake()
