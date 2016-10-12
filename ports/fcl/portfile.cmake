@@ -16,11 +16,15 @@ vcpkg_download_distfile(ARCHIVE
 )
 vcpkg_extract_source_archive(${ARCHIVE})
 
+message(STATUS "DEBUG -- TARGET_TRIPLET: ${TARGET_TRIPLET}")
+message(STATUS "DEBUG -- ${CURRENT_PACKAGES_DIR}/../eigen3_${TARGET_TRIPLET}")
+
 vcpkg_configure_cmake(
     SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/fcl-master
     # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
+    OPTIONS -DEIGEN3_ROOT_DIR="${CURRENT_PACKAGES_DIR}/../eigen_${TARGET_TRIPLET}"
 )
 
 vcpkg_install_cmake()
