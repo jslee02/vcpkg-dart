@@ -25,7 +25,7 @@ vcpkg_configure_cmake(
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
     OPTIONS -DCMAKE_PREFIX_PATH="${CURRENT_PACKAGES_DIR}/../../installed/${TARGET_TRIPLET}"
-    OPTIONS -DCMAKE_TOOLCHAIN_FILE="C:\projects\vcpkg\scripts\buildsystems\vcpkg.cmake"
+    OPTIONS -DCMAKE_TOOLCHAIN_FILE="C:\\projects\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
     OPTIONS -DPACKAGE_CMAKE_INSTALL_PREFIX=\${CMAKE_CURRENT_LIST_DIR}/../..
 )
 
