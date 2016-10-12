@@ -53,8 +53,8 @@ install:
   # - optional dependencies: bullet3, tinyxml2, freeglut, opengl
   #- vcpkg install bullet3:%VCPKG_ARCH% tinyxml2:%VCPKG_ARCH% freeglut:%VCPKG_ARCH% opengl:%VCPKG_ARCH%
   # - testing dependencies: libccd, fcl
-  - vcpkg install libccd:%VCPKG_ARCH%
-  - vcpkg integrate install
+  #- vcpkg install libccd:%VCPKG_ARCH%
+  #- vcpkg integrate install
   - dir
   - dir C:\projects\vcpkg
   - dir C:\projects\vcpkg\installed
