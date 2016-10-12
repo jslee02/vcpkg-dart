@@ -62,6 +62,8 @@ install:
   - dir C:\projects\vcpkg\installed\%VCPKG_ARCH%\include
   - dir C:\projects\vcpkg\installed\%VCPKG_ARCH%\lib
   - dir C:\projects\vcpkg\installed\%VCPKG_ARCH%\share
+  - dir C:\projects\vcpkg\package
+  - dir C:\projects\vcpkg\package\%VCPKG_ARCH%
   - vcpkg install fcl:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
