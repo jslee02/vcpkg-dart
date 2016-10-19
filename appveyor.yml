@@ -64,6 +64,7 @@ install:
   - dir C:\projects\vcpkg\installed\%VCPKG_ARCH%\share
   - dir C:\projects\vcpkg\packages
   - dir C:\projects\vcpkg\packages\eigen3_%VCPKG_ARCH%
+  - dir C:\projects\vcpkg\scripts\buildsystems
   - vcpkg install fcl:%VCPKG_ARCH%
   - vcpkg integrate install
   #- cd C:/projects/vcpkg/packages/libccd_x86-windows/lib/
