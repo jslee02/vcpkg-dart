@@ -20,7 +20,6 @@ vcpkg_configure_cmake(
     # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
-    #OPTIONS -DCMAKE_TOOLCHAIN_FILE=C:/projects/vcpkg/scripts/buildsystems/vcpkg.cmake
     OPTIONS -DDART_VERBOSE=ON
 )
 
