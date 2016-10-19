@@ -16,7 +16,7 @@ vcpkg_download_distfile(ARCHIVE
 vcpkg_extract_source_archive(${ARCHIVE})
 
 vcpkg_configure_cmake(
-    SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/fcl-master
+    SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/dart-6.1.1
     # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
