@@ -1,4 +1,4 @@
 Source: dart
 Version: 6.1.1
 Description: Dynamic Animation and Robotics Toolkit
-Build-Depends: eigen3, assimp
+Build-Depends: eigen3, libccd
