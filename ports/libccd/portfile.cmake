@@ -11,7 +11,7 @@ include(vcpkg_common_functions)
 set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libccd-master)
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/danfis/libccd/archive/master.zip"
-    FILENAME "master.zip"
+    FILENAME "libccd-master.zip"
     SHA512 20abff1f08d8cdadb0e8ca3653d42f9aa7b6f54f98c5101a07926289f33399f075a2ffdc39bdb36936219cf7007fddb21bbdf4d15646770707c7d65ac3a12e5e
 )
 vcpkg_extract_source_archive(${ARCHIVE})
