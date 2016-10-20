@@ -8,28 +8,27 @@
 
 include(${CMAKE_TRIPLET_FILE})
 include(vcpkg_common_functions)
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libccd-master)
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/danfis/libccd/archive/master.zip"
-    FILENAME "libccd-master.zip"
+    FILENAME "master.zip"
     SHA512 20abff1f08d8cdadb0e8ca3653d42f9aa7b6f54f98c5101a07926289f33399f075a2ffdc39bdb36936219cf7007fddb21bbdf4d15646770707c7d65ac3a12e5e
 )
 vcpkg_extract_source_archive(${ARCHIVE})
 
 vcpkg_configure_cmake(
-    SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libccd-master
-    # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1
+    SOURCE_PATH ${SOURCE_PATH}
+    # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1 -DUSE_THIS_TOO=2
     # OPTIONS_RELEASE -DOPTIMIZE=1
     # OPTIONS_DEBUG -DDEBUGGABLE=1
 )
 
 vcpkg_install_cmake()
 
-#file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/share)
-#file(RENAME ${CURRENT_PACKAGES_DIR}/lib/cmake/ccd ${CURRENT_PACKAGES_DIR}/share/ccd)
-
-# Avoid a copy of include file in debug
+# Avoid a copy of file in debug
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
 
 # Handle copyright
-file(COPY ${CURRENT_BUILDTREES_DIR}/src/libccd-master/BSD-LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libccd)
+file(COPY ${SOURCE_PATH}/BSD-LICENSE DESTINATION ${CURRENT_PACKAGES_DIR}/share/libccd)
 file(RENAME ${CURRENT_PACKAGES_DIR}/share/libccd/BSD-LICENSE ${CURRENT_PACKAGES_DIR}/share/libccd/copyright)
