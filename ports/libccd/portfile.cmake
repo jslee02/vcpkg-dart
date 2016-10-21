@@ -8,11 +8,11 @@
 
 include(${CMAKE_TRIPLET_FILE})
 include(vcpkg_common_functions)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libccd-master)
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/libccd-16b9379fb6e8610566fe5e1396166daf7106f165)
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/danfis/libccd/archive/master.zip"
-    FILENAME "libccd-master.zip"
-    SHA512 20abff1f08d8cdadb0e8ca3653d42f9aa7b6f54f98c5101a07926289f33399f075a2ffdc39bdb36936219cf7007fddb21bbdf4d15646770707c7d65ac3a12e5e
+    URLS "https://github.com/danfis/libccd/archive/16b9379fb6e8610566fe5e1396166daf7106f165.zip"
+    FILENAME "libccd-16b9379fb6e8610566fe5e1396166daf7106f165.zip"
+    SHA512 6cb3ea713f1b1ac1bf48c9ee7e14cb85b3ec5c822ce239330913edc00cb84c846b49ec090cbfa226ef8de70bac97199eb2bf4c651225e3cfc6f6a9dd441aa7db
 )
 vcpkg_extract_source_archive(${ARCHIVE})
 
