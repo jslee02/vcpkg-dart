@@ -48,7 +48,10 @@ install:
   
   # install pacakges
   # ---- required dependencies: eigen3, libccd, fcl, assimp (boost is already installed by appveyor)
-  - vcpkg install eigen3:%VCPKG_ARCH% libccd:%VCPKG_ARCH% fcl:%VCPKG_ARCH% # assimp:%VCPKG_ARCH%
+  - vcpkg install eigen3:%VCPKG_ARCH%
+  - vcpkg install libccd:%VCPKG_ARCH%
+  - vcpkg install fcl:%VCPKG_ARCH%
+  - #vcpkg install assimp:%VCPKG_ARCH%
   - vcpkg integrate install
   # ---- optional dependencies: bullet3, tinyxml2, freeglut, opengl
   - vcpkg install bullet3:%VCPKG_ARCH%
