@@ -79,7 +79,5 @@ build: off
 test: off
 
 on_failure:
-  - type C:\projects\vcpkg\buildtrees\fcl\config-%VCPKG_ARCH%-rel-out.log
-  - type C:\projects\vcpkg\buildtrees\fcl\config-%VCPKG_ARCH%-rel-err.log
   - type C:\projects\vcpkg\buildtrees\dart\config-%VCPKG_ARCH%-rel-out.log
   - type C:\projects\vcpkg\buildtrees\dart\config-%VCPKG_ARCH%-rel-err.log
