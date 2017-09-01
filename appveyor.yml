@@ -47,6 +47,7 @@ install:
   - powershell -exec bypass scripts\bootstrap.ps1
   
   # install pacakges
+  - git pull
   # ---- required dependencies: eigen3, libccd, fcl, assimp (boost is already installed by appveyor)
   - vcpkg install eigen3:%VCPKG_ARCH%
   - vcpkg install libccd:%VCPKG_ARCH%
