@@ -48,6 +48,7 @@ install:
   
   # install pacakges
   - git pull
+  - git search fcl
   # ---- required dependencies: eigen3, libccd, fcl, assimp (boost is already installed by appveyor)
   - vcpkg install eigen3:%VCPKG_ARCH%
   - vcpkg install libccd:%VCPKG_ARCH%
