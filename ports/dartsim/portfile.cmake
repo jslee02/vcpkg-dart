@@ -11,20 +11,17 @@
 #
 
 include(vcpkg_common_functions)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/dartsim-v6.3.0)
-vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/dartsim/dart/archive/v6.3.0.tar.gz"
-    FILENAME "dartsim-v6.3.0.tar.gz"
-    SHA512 af0d8c43fb9479d11231b0319e3d4e23d78b2123edf4c76e69f8f0cf7d6770c1af538847e0fbb89bc18ac6028f6475066574a0c3a8962387cdc483141b07e118
+
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO dartsim/dart
+    REF 8090aaec352e6198c4606c98e4990c7942864cb2
+    SHA512 5da68ddb8e73807a3d0e5ff2e200eada9846bed91476d9a31fbb3f497a39c6db5072a289993c3ab6eb89bfd5fcdd2e5a293dcab8a4397c325b71fda072e4e367
+    HEAD_REF release-6.3
 )
-vcpkg_extract_source_archive(${ARCHIVE})
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
-    # PREFER_NINJA # Disable this option if project cannot be built with Ninja
-    # OPTIONS -DUSE_THIS_IN_ALL_BUILDS=1 -DUSE_THIS_TOO=2
-    # OPTIONS_RELEASE -DOPTIMIZE=1
-    # OPTIONS_DEBUG -DDEBUGGABLE=1
     OPTIONS -DDART_VERBOSE=ON
 )
 
