@@ -1,0 +1,4 @@
+Source: dart
+Version: 6.3.0
+Description: Dynamic Animation and Robotics Toolkit
+Build-Depends: assimp, boost-system, boost-filesystem, eigen3, fcl, libccd
