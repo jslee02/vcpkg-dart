@@ -11,10 +11,10 @@
 #
 
 include(vcpkg_common_functions)
-set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/v6.3.0)
+set(SOURCE_PATH ${CURRENT_BUILDTREES_DIR}/src/dartsim-v6.3.0)
 vcpkg_download_distfile(ARCHIVE
     URLS "https://github.com/dartsim/dart/archive/v6.3.0.tar.gz"
-    FILENAME "v6.3.0.tar.gz"
+    FILENAME "dartsim-v6.3.0.tar.gz"
     SHA512 af0d8c43fb9479d11231b0319e3d4e23d78b2123edf4c76e69f8f0cf7d6770c1af538847e0fbb89bc18ac6028f6475066574a0c3a8962387cdc483141b07e118
 )
 vcpkg_extract_source_archive(${ARCHIVE})
