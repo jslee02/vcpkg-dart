@@ -2,22 +2,21 @@
 version: "{build}"
 
 # Operating system (build VM template)
-os: Visual Studio 2015
+image: Visual Studio 2017
 
 # build platform, i.e. Win32 (instead of x86), x64, Any CPU. This setting is optional.
-platform: 
-  #- Win32
-  - x64
+platform: x64
 
 # specify custom environment variables
 environment:
-  MSVC_DEFAULT_OPTIONS: ON
-  BOOST_ROOT: C:\Libraries\boost_1_59_0
-  BOOST_LIBRARYDIR: C:\Libraries\boost_1_59_0\lib32-msvc-14.0
+  CMAKE_TOOLCHAIN_FILE: -DCMAKE_TOOLCHAIN_FILE="C:\tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  matrix:
+    - CMAKE_GENERATOR: -G"Visual Studio 15 2017 Win64"
+      CMAKE_TOOLCHAIN: -T"v141"
 
 # build configuration, i.e. Debug, Release, etc.
 configuration:
-  #- Debug
+  - Debug
   - Release
 
 # scripts that are called at very beginning, before repo cloning
@@ -30,50 +29,17 @@ clone_folder: C:\projects\vcpkg-dart
 
 # scripts that run after cloning repository
 install:
-  #- set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
-  
   - if "%platform%"=="Win32" set VCPKG_ARCH=x86-windows
   - if "%platform%"=="x64"   set VCPKG_ARCH=x64-windows
   
-  # clone vcpkg
-  - cd C:\projects
-  - git clone https://github.com/Microsoft/vcpkg
-  - cd vcpkg
-  
   # copy custom ports into vcpkg ports directory
-  - xcopy C:\projects\vcpkg-dart\ports C:\projects\vcpkg\ports\ /S
-  
-  # build vcpkg
-  - powershell -exec bypass scripts\bootstrap.ps1
+  - xcopy C:\projects\vcpkg-dart\ports C:\tools\vcpkg\ports\ /S
   
   # install pacakges
-  - git pull
-  # ---- required dependencies: eigen3, libccd, fcl, assimp (boost is already installed by appveyor)
-  - vcpkg install eigen3:%VCPKG_ARCH%
-  - vcpkg install ccd:%VCPKG_ARCH%
-  - vcpkg install fcl:%VCPKG_ARCH%
-  - vcpkg install assimp:%VCPKG_ARCH%
-  # ---- optional dependencies: bullet3, tinyxml2, freeglut, opengl
-  - vcpkg install bullet3:%VCPKG_ARCH%
-  #- vcpkg install tinyxml2:%VCPKG_ARCH% 
-  #- vcpkg install freeglut:%VCPKG_ARCH%
-  #- vcpkg install opengl:%VCPKG_ARCH%
-  #- vcpkg install dart:%VCPKG_ARCH%
+  - vcpkg update
+  - vcpkg install dartsim:%VCPKG_ARCH%
   
   - vcpkg integrate install
-  
-  # install DART
-  - if "%platform%"=="Win32" set CMAKE_GENERATOR_NAME=Visual Studio 14 2015
-  - if "%platform%"=="x64"   set CMAKE_GENERATOR_NAME=Visual Studio 14 2015 Win64
-  - cd C:\projects
-  - git clone https://github.com/dartsim/dart
-  - cd dart
-  - md build
-  - cd build
-  - cmake .. -G "%CMAKE_GENERATOR_NAME%" "-DCMAKE_TOOLCHAIN_FILE=C:\projects\vcpkg\scripts\buildsystems\vcpkg.cmake" "-DCMAKE_BUILD_TYPE=%configuration%" -DBOOST_ROOT="%BOOST_ROOT%" -DBOOST_LIBRARYDIR="%BOOST_LIBRARYDIR%" -DBoost_USE_STATIC_LIBS="ON"
-
-# scripts to run before build
-#before_build:
   
 build: off
 test: off
