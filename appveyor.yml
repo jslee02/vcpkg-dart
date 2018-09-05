@@ -9,7 +9,7 @@ platform: x64
 
 # specify custom environment variables
 environment:
-  CMAKE_TOOLCHAIN_FILE: -DCMAKE_TOOLCHAIN_FILE="C:\tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  CMAKE_TOOLCHAIN_FILE: -DCMAKE_TOOLCHAIN_FILE="C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake"
   matrix:
     - CMAKE_GENERATOR: -G"Visual Studio 15 2017 Win64"
       CMAKE_TOOLCHAIN: -T"v141"
@@ -30,7 +30,7 @@ clone_folder: C:\projects\vcpkg-dart
 # scripts that run after cloning repository
 install:
   # update vcpkg
-  - cd C:\tools\vcpkg
+  - cd C:\Tools\vcpkg
   - git pull
   - .\bootstrap-vcpkg.bat
   
@@ -52,4 +52,4 @@ build: off
 test: off
 
 on_failure:
-  - if exist C:\projects\vcpkg\buildtrees\dart type C:\projects\vcpkg\buildtrees\dart\*.log
+  - if exist C:\Tools\vcpkg\buildtrees\dartsim type C:\Tools\vcpkg\buildtrees\dartsim\*.log
