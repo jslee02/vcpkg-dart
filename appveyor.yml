@@ -52,7 +52,4 @@ build: off
 test: off
 
 on_failure:
-  - if exist "C:\projects\vcpkg\buildtrees\dart\config-x64-windows-rel-out.log" "type C:\projects\vcpkg\buildtrees\dart\config-x64-windows-rel-out.log"
-  - if exist "C:\projects\vcpkg\buildtrees\dart\config-x64-windows-rel-err.log" "type C:\projects\vcpkg\buildtrees\dart\config-x64-windows-rel-err.log
-  - if exist "C:\projects\vcpkg\buildtrees\dart\package-x64-windows-rel-out.log" "type C:\projects\vcpkg\buildtrees\dart\package-x64-windows-rel-out.log"
-  - if exist "C:\projects\vcpkg\buildtrees\dart\package-x64-windows-rel-err.log" "type C:\projects\vcpkg\buildtrees\dart\package-x64-windows-rel-err.log"
+  - if exist C:\projects\vcpkg\buildtrees\dart type C:\projects\vcpkg\buildtrees\dart\*.log
