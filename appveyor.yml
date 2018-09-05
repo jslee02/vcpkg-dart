@@ -29,15 +29,22 @@ clone_folder: C:\projects\vcpkg-dart
 
 # scripts that run after cloning repository
 install:
+  # update vcpkg
+  - cd C:\tools\vcpkg
+  - git pull
+  - .\bootstrap-vcpkg.bat
+  
   - if "%platform%"=="Win32" set VCPKG_ARCH=x86-windows
   - if "%platform%"=="x64"   set VCPKG_ARCH=x64-windows
+  
+  # remove outdated versions
+  - vcpkg remove --outdated --recurse
   
   # copy custom ports into vcpkg ports directory
   - xcopy C:\projects\vcpkg-dart\ports C:\tools\vcpkg\ports\ /S
   
   # install pacakges
-  - vcpkg update
-  - vcpkg install dartsim:%VCPKG_ARCH%
+  - vcpkg install --recurse --triplet %VCPKG_ARCH% dartsim
   
   - vcpkg integrate install
   
