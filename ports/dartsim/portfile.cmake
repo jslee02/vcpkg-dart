@@ -15,9 +15,9 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO dartsim/dart
-    REF 8090aaec352e6198c4606c98e4990c7942864cb2
-    SHA512 5da68ddb8e73807a3d0e5ff2e200eada9846bed91476d9a31fbb3f497a39c6db5072a289993c3ab6eb89bfd5fcdd2e5a293dcab8a4397c325b71fda072e4e367
-    HEAD_REF release-6.3
+    REF v6.6.1
+    SHA512 b873688f524560b00c5469f4b0a2fa5077058e50bdd1ec278e2301796902afdd999602ae6617a00296b90aad1691619ede371174ebb0dd95a9a90a6eaeeebf1c
+    HEAD_REF release-6.6
 )
 
 vcpkg_configure_cmake(
