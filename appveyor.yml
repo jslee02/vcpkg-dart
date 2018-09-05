@@ -52,9 +52,7 @@ build: off
 test: off
 
 on_failure:
-  - if "%platform%"=="Win32" set VCPKG_ARCH=x86-windows
-  - if "%platform%"=="x64"   set VCPKG_ARCH=x64-windows
-  - type C:\projects\vcpkg\buildtrees\dart\config-%VCPKG_ARCH%-rel-out.log
-  - type C:\projects\vcpkg\buildtrees\dart\config-%VCPKG_ARCH%-rel-err.log
-  - type C:\projects\vcpkg\buildtrees\dart\package-%VCPKG_ARCH%-rel-out.log
-  - type C:\projects\vcpkg\buildtrees\dart\package-%VCPKG_ARCH%-rel-err.log
+  - type C:\projects\vcpkg\buildtrees\dart\config-x64-windows-rel-out.log
+  - type C:\projects\vcpkg\buildtrees\dart\config-x64-windows-rel-err.log
+  - type C:\projects\vcpkg\buildtrees\dart\package-x64-windows-rel-out.log
+  - type C:\projects\vcpkg\buildtrees\dart\package-x64-windows-rel-err.log
