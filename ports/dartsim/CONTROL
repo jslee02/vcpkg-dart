@@ -1,4 +1,4 @@
 Source: dartsim
-Version: 6.6.1
+Version: 6.9.1
 Description: Dynamic Animation and Robotics Toolkit
 Build-Depends: assimp, boost-system, boost-filesystem, ccd, eigen3, fcl
