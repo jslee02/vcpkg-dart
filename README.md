@@ -1,1 +1,1 @@
-# vcpkg-dart [![Build status](https://ci.appveyor.com/api/projects/status/xo7d9leygi8dge7m/branch/master?svg=true)](https://ci.appveyor.com/project/jslee02/vcpkg-dart/branch/master)
+# vcpkg-dart [![Build status](https://ci.appveyor.com/api/projects/status/xo7d9leygi8dge7m/branch/master?svg=true)](https://ci.appveyor.com/project/jslee02/vcpkg-dart/branch/master) [![Build Status](https://dev.azure.com/jslee02/vcpkg-dart/_apis/build/status/jslee02.vcpkg-dart?branchName=master)](https://dev.azure.com/jslee02/vcpkg-dart/_build/latest?definitionId=7&branchName=master)
