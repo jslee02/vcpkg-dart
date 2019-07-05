@@ -15,8 +15,6 @@ jobs:
   variables:
     VCPKG_INSTALL_ROOT: $(Build.SourcesDirectory)\vcpkg
     VCPKG_ARCH: 'x64-windows'
-    VCPKG_PACKAGES: 'assimp boost-system boost-filesystem ccd eigen3 fcl'
-    VCPKG_OPTIONAL_PACKAGES: 'bullet3 flann freeglut libipopt nlopt ode opengl osg tinyxml2 urdfdom'
     BUILD_TOOLSET_VERSION: '142'
     CMAKE_GENERATOR: 'Visual Studio 16 2019'
   steps:
@@ -26,16 +24,6 @@ jobs:
       $(VCPKG_INSTALL_ROOT)\bootstrap-vcpkg.bat
     displayName: 'Install vcpkg'
   - script: |
-      $(VCPKG_INSTALL_ROOT)\vcpkg.exe install --recurse --triplet $(VCPKG_ARCH) $(VCPKG_PACKAGES)
-      $(VCPKG_INSTALL_ROOT)\vcpkg.exe install --recurse --triplet $(VCPKG_ARCH) $(VCPKG_OPTIONAL_PACKAGES)
+      $(VCPKG_INSTALL_ROOT)\vcpkg.exe install --recurse --triplet $(VCPKG_ARCH) dartsim
       $(VCPKG_INSTALL_ROOT)\vcpkg.exe integrate install
-    displayName: 'Install dependencies'
-  - script: |
-      cmake --version
-      mkdir build
-      cd build
-      cmake .. -G "$(CMAKE_GENERATOR)" -A x64 -DCMAKE_BUILD_TYPE=$(CONFIGURATION) -Wno-dev -T "v$(BUILD_TOOLSET_VERSION),host=x64" -DVCPKG_TARGET_TRIPLET=$(VCPKG_ARCH) -DCMAKE_TOOLCHAIN_FILE="$(VCPKG_INSTALL_ROOT)/scripts/buildsystems/vcpkg.cmake" -DCMAKE_INSTALL_PREFIX="$(Build.BinariesDirectory)/$(REPO_NAME)" -DDART_MSVC_DEFAULT_OPTIONS=ON
-      cmake --build . --target ALL_BUILD --config $(CONFIGURATION) -- /maxcpucount:4
-    displayName: 'Build'
-    workingDirectory: '$(Build.SourcesDirectory)'
-
+    displayName: 'Install dartsim'
